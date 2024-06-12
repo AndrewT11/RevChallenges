@@ -52,11 +52,14 @@ public with sharing class DataLord {
     }
 
     //challenge VII
-    public static List<Account> MostPopularAccount() {
-        String contacts = 'SELECT Id FROM Contacts';
-        List<Account> popularAccounts = [SELECT Name, COUNT(contacts) FROM Account GROUP BY Name ORDER BY COUNT(contacts) DESC];
+    public static Contact MostPopularAccount() {
+        
+        return [SELECT Account.Name, COUNT(Id) FROM Contact GROUP BY Account.Name ORDER BY COUNT(Id) DESC LIMIT 1];
 
-        return popularAccounts[0];
+        // String contacts = 'SELECT Id FROM Contacts'; 
+        // List<Account> popularAccounts = [SELECT Name, COUNT(Id), (SELECT Id FROM Contacts) FROM Account GROUP BY Name ORDER BY COUNT(contacts) DESC];
+
+        // return popularAccounts[0];
     }
-    
+
 }
