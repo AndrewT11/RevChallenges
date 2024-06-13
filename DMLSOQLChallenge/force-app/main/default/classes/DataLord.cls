@@ -13,7 +13,7 @@ public with sharing class DataLord {
     public static Integer NumHot() {
         List<Account> accts = [SELECT Id, Name FROM Account WHERE Rating = 'Hot'];
         Integer numAccounts = accts.size();
-
+        
         return numAccounts;
     }
 
