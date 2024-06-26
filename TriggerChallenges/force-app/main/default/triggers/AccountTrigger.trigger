@@ -11,7 +11,7 @@ trigger AccountTrigger on Account (before insert, before update, before delete, 
             AccountHelper.blockContactDelete(Trigger.old);
         }
         when  AFTER_INSERT {
-
+            AccountHelper.createContact(Trigger.new);
         }
         when AFTER_UPDATE {
 
