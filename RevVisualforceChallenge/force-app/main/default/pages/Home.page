@@ -1,0 +1,8 @@
+<apex:page>
+
+<h1>Rev Challenge Home Page</h1>
+<apex:include pageName="AboutMe" />
+<apex:include pageName="AccountsPage" />
+<apex:include pageName="SingleAccountNoChange" />
+
+</apex:page>

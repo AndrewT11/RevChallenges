@@ -1,0 +1,10 @@
+<apex:page controller="AccountFilterController">
+    <apex:form>
+        <apex:pageBlock title="Filter Accounts">
+            <apex:pageBlockSection>
+                <apex:inputText value="{! accountFilter}" label="Account Name Filter" />
+                <apex:commandButton value="Filter" action="{!filterAccounts}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

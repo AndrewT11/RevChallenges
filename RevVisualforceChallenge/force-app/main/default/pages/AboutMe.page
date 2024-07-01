@@ -1,0 +1,10 @@
+<apex:page renderAs="pdf">
+
+    <h1>About Me</h1>
+    <p>
+        <apex:outputText value= "{!IF($User.Language_Locale__c == 'es', 
+        'Mi nombre es Andrew. Nací en Detroit, Michigan. Crecí allí hasta los 8 años y luego me mudé a Plano, TX. He sido residente de Texas durante la mayor parte de mi vida. Mi deporte favorito es el baloncesto. Soy un gran admirador de los Detroit Pistons. Todos los equipos de Detroit son considerados mi equipo local, aunque he vivido en Texas la mayor parte de mis años. Disfruto jugar baloncesto, hacer ejercicio, leer y jugar juegos de computadora.',
+        'My name is Andrew. I was born in Detroit, MI. I was raised there until I was 8, then moved to Plano, TX. I have been a Texas resident for most of my life. My favorite sport is basketball. I am a huge fan of the Detroit Pistons. All Detroit teams are considered my home team, even though I have lived in Texas for the majority of my years. I enjoy playing basketball, working out, reading, and playing computer games.')}"/>
+        
+    </p>
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page controller="SingleAccountNoChangeController">
+    <apex:form>
+        <apex:pageBlock title="Can't Change this Account Yo.">
+            <apex:pageBlockSection>
+                <apex:commandButton value="Greeting" action="{!setGreeting}" reRender="greetingOutput" />
+                <apex:outputPanel id="greetingOutput">
+                    <!-- <apex:outputField value ="{!acc.Id}"/> -->
+                    <apex:outputText value="{!greeting}" rendered="{!NOT(ISBLANK(greeting))}"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection>
+                <apex:outputField value ="{!acc.Id}"/>
+                <apex:outputField value="{!acc.Name}"/>
+                <apex:outputField value="{!acc.Type}"/>
+                <apex:outputField value="{!acc.Industry}"/>
+                <apex:outputField value="{!acc.Phone}"/>
+                <apex:outputField value="{!acc.CurrencyIsoCode}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

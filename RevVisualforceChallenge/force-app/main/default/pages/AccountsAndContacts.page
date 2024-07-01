@@ -1,0 +1,17 @@
+<!-- <apex:page controller="AccountsAndContactsController"> -->
+ <apex:page controller="AccountFilterController">
+    <apex:form>
+        <!-- <apex:pageBlock title="Accounts and Related Contacts"> -->
+            <!-- <apex:pageBlockTable value="{!accounts}" var="account"> -->
+        <apex:pageBlock title="Filtered Accounts and Related Contacts">
+            <apex:pageBlockTable value="{!filteredAccounts}" var="account">
+                <apex:column headerValue="Account Name">
+                    <apex:outputText value="{!account.Name}" />
+                </apex:column>
+                <apex:column headerValue="Related Contacts">
+                    <apex:outputText value="{!accountContactNamesMap[account.Id]}" />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

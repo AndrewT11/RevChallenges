@@ -1,0 +1,8 @@
+<!-- 
+challenge 1 complete    
+https://playful-koala-h01spo-dev-ed--c.trailblaze.vf.force.com/apex/SingleAccount?id=001bm0000050gNpAAI
+-->
+
+<apex:page standardController="Account">
+    <apex:detail/>
+</apex:page>

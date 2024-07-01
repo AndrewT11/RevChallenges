@@ -1,0 +1,26 @@
+<apex:page controller="AccountSearchController">
+    <apex:form>
+        <apex:pageBlock title="Account Search">
+            <apex:pageBlockSection>
+                <apex:inputText value="{!accountId}" label="Enter Account ID" />
+                <apex:commandButton value="Search" action="{!searchAccount}" reRender="accountDetails, messages" />
+            </apex:pageBlockSection>
+            <apex:messages id="messages" />
+            <apex:outputPanel id="accountDetails">
+                <apex:pageBlockSection title="Account Details" rendered="{!NOT(ISBLANK(acc.Id))}">
+                    <apex:outputField value="{!acc.Id}" />
+                    <apex:outputField value="{!acc.Name}" />
+                    <apex:outputField value="{!acc.Type}" />
+                    <apex:outputField value="{!acc.Industry}" />
+                    <apex:outputField value="{!acc.Phone}" />
+                    <apex:outputField value="{!acc.CurrencyIsoCode}" />
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Related Contacts">
+                    <apex:repeat value="{!contacts}" var="contact">
+                        <li>{!contact.Name}</li>
+                    </apex:repeat>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
