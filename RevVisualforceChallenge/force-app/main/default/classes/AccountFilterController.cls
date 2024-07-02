@@ -1,3 +1,6 @@
+// Challenge X
+//Create a second Visualforce page that takes in some user input to filter Accounts by. //Once this input is submitted, your page should display the previous Visualforce page you made and use the filter to filter the list of all Accounts.
+
 public with sharing class AccountFilterController {
     
     public String accountFilter { get; set; }

@@ -1,0 +1,28 @@
+<!-- Challenge XI & XII
+On your Visualforce page with all Accounts, implement a search feature. This feature should update the list of all Accounts with each character typed.
+Modify your table to suport inline editing -->
+
+<apex:page controller="AccountSearchController2">
+    <apex:form>
+        <apex:inputText value = "{!searchString}">
+            <apex:actionSupport event="onkeyup" action="{!search}" rerender="accountTable"/>
+        </apex:inputText>
+
+        <apex:pageBlock title="Search Key Stroke">
+            <!-- <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Update" action="{!updateAccounts}" rerender="accountTable" />
+            </apex:pageBlockButtons> -->
+            <apex:pageBlockTable value="{!accounts}" var="account" id="accountTable">
+                <apex:column>
+                    <apex:commandButton value="Update" action="{!updateAccounts}" rerender="accountTable" />
+                </apex:column>
+                <apex:column headerValue="Account Name">
+                    <apex:inputText value="{!account.Name}" />
+                </apex:column>
+                <apex:column headerValue="Related Contact">
+                    <apex:outputText value="{!accountContactNamesMap[account.Id]}" />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

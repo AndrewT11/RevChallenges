@@ -1,3 +1,10 @@
+// Challenge VII
+// Create a Visualforce page that displays an Account based off of user input.
+
+// Challenge IX
+// Create a Visualforce page that displays all Accounts in the system and all their related Contact Names in the same table. The Contact names should be separated by a comma and a space.
+
+
 public with sharing class AccountSearchController {
     
     public String accountId { get; set; }
@@ -7,6 +14,9 @@ public with sharing class AccountSearchController {
     public AccountSearchController() {
         acc = new Account();
     }
+
+// Challenge VIII
+// Add to your Visualforce page the functionality to display all related Contacts of the Account as an unformatted list of names.
 
     public void searchAccount() {
         if(!String.isBlank(accountId)) {
